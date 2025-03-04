@@ -1,0 +1,25 @@
+{
+  "name": "proyectoreact",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "serve": "vite preview",
+  "server": "json-server --watch db.json --port 3001"
+},
+  "dependencies": {
+    "axios": "^1.8.1",
+    "json-server": "^1.0.0-beta.3",
+    "json-server-auth": "^2.1.0",
+    "prop-types": "^15.8.1",
+    "react-router-dom": "^6.30.0",
+    "styled-components": "^6.1.15",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.2.0"
+  }
+}

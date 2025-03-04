@@ -1,0 +1,6 @@
+{
+    "port": 3001,
+    "watch": true,
+    "routes": "routes.json",
+    "middlewares": ["json-server-auth"]
+  }

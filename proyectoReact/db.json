@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "1c4b",
+      "email": "woodhercules22@gmail.com",
+      "password": "1212"
+    },
+    {
+      "id": "82e8",
+      "name": "Miguel angel sedeño",
+      "email": "sedeno2002@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "games": []
+}
