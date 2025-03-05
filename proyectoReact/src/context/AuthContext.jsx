@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React,{ createContext, useState, useContext, useEffect } from "react";
 import axios from "axios";
 
 // Crear el contexto
@@ -6,27 +6,24 @@ const AuthContext = createContext();
 
 // Proveedor del contexto
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [error, setError] = useState(null); // Manejo de errores
+  const [user, setUser] = useState(null); // El estado del usuario
 
   // Función para iniciar sesión
   const login = async (credentials) => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
-      const foundUser = response.data.find(
+      const user = response.data.find(
         (u) => u.email === credentials.email && u.password === credentials.password
       );
-
-      if (foundUser) {
-        localStorage.setItem("token", foundUser.id);
-        setUser(foundUser);
-        setError(null); // Limpiar errores en caso de éxito
+  
+      if (user) {
+        localStorage.setItem("authToken", user.id); // Guardar el token
+        setUser(user); // Almacenar el usuario en el estado
       } else {
-        setError("Correo o contraseña incorrectos");
+        console.log("Credenciales inválidas");
       }
     } catch (error) {
-      setError("Error al intentar iniciar sesión. Intenta de nuevo.");
-      console.error("Login failed:", error);
+      console.error("Error al iniciar sesión:", error);
     }
   };
 
@@ -34,49 +31,37 @@ export const AuthProvider = ({ children }) => {
   const register = async (credentials) => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/users`, credentials);
-      
-      if (response.status === 201) {
-        setUser(response.data); // Guarda el usuario registrado en el contexto
-        localStorage.setItem("token", response.data.id); // Guarda el ID como "token"
-        return response.data;
-      }
+      localStorage.setItem("authToken", response.data.accessToken);
+      setUser(response.data.user);
+      return response;
     } catch (error) {
-      setError("Error al registrarse. Intenta con otro correo.");
-      console.error("Registration failed:", error.response ? error.response.data : error.message);
+      console.error("Error al registrarse:", error.response ? error.response.data : error.message);
     }
   };
 
   // Función para cerrar sesión
   const logout = () => {
-    localStorage.removeItem("token");
-    setUser(null);
+    localStorage.removeItem("authToken"); // Eliminar el token
+    setUser(null); // Eliminar el usuario del estado
   };
 
   // Verificar si hay un token al cargar la aplicación
   useEffect(() => {
-    const token = localStorage.getItem("token");
-
+    const token = localStorage.getItem("authToken"); // Buscar el token
     if (token) {
-      axios.get(`${import.meta.env.VITE_API_URL}/users/${token}`)
+      axios.get(`http://localhost:3000/users/${token}`) // Verificar el usuario
         .then((response) => {
-          setUser(response.data);
+          setUser(response.data); // Almacenar el usuario en el estado
         })
         .catch((error) => {
           console.error("Error al obtener el usuario:", error);
-          localStorage.removeItem("token");
+          localStorage.removeItem("authToken");
           setUser(null);
         });
     }
   }, []);
 
-  // Valor que se provee a los componentes hijos
-  const value = {
-    user,
-    login,
-    register,
-    logout,
-    error, // Exponer errores al contexto
-  };
+  const value = { user, login, register, logout };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
@@ -85,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error("useAuth debe usarse dentro de un AuthProvider");
+    throw new Error("useAuth debe ser usado dentro de AuthProvider");
   }
   return context;
 };

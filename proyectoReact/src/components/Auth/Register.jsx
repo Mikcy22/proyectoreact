@@ -36,7 +36,7 @@ const Button = styled.button`
 `;
 
 const Register = () => {
-  const [userData, setUserData] = useState({ name: "", email: "", password: "" });
+  const [userData, setUserDauseNavigateta] = useState({ name: "", email: "", password: "" });
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {

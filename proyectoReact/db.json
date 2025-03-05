@@ -26,14 +26,14 @@
   ],
   "games": [
     {
-      "title": "Genshin impact",
-      "genre": "Aventuras",
+      "title": "Genshin impact 1",
+      "genre": "Aventura",
       "releaseYear": "2020",
       "image": "https://media.vandal.net/t200/75962/genshin-impact-20209417573364_1.jpg",
       "id": "a99e"
     },
     {
-      "title": "Ejemplo 1",
+      "title": "Ejemplo 3",
       "genre": "Simulación",
       "releaseYear": "2025",
       "image": "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-ii-remastered-hero-01-en-12march24?$1600px$",
