@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import React from "react";
 
-const GameForm = ({ onSave }) => {
+const GameForm = ({ onSave, gameToEdit }) => {
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [releaseYear, setReleaseYear] = useState("");
   const [image, setImage] = useState("");
+
+  const genres = ["Acción", "Aventura", "RPG", "Estrategia", "Deportes", "Carreras", "Simulación", "Terror", "Peleas", "Plataformas"];
+
+  useEffect(() => {
+    if (gameToEdit) {
+      setTitle(gameToEdit.title);
+      setGenre(gameToEdit.genre);
+      setReleaseYear(gameToEdit.releaseYear);
+      setImage(gameToEdit.image);
+    }
+  }, [gameToEdit]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,12 +30,23 @@ const GameForm = ({ onSave }) => {
     }
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/games`, {
-        title,
-        genre,
-        releaseYear,
-        image,
-      });
+      if (gameToEdit) {
+        // Actualizar un juego existente
+        await axios.put(`${import.meta.env.VITE_API_URL}/games/${gameToEdit.id}`, {
+          title,
+          genre,
+          releaseYear,
+          image,
+        });
+      } else {
+        // Agregar un nuevo juego
+        await axios.post(`${import.meta.env.VITE_API_URL}/games`, {
+          title,
+          genre,
+          releaseYear,
+          image,
+        });
+      }
 
       onSave(); // Refrescar lista de juegos
       setTitle("");
@@ -32,13 +54,13 @@ const GameForm = ({ onSave }) => {
       setReleaseYear("");
       setImage("");
     } catch (error) {
-      console.error("Error añadiendo juego:", error);
+      console.error("Error al guardar juego:", error);
     }
   };
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <h2>➕ Agregar Nuevo Juego</h2>
+      <h2>{gameToEdit ? "✏️ Editar Juego" : "➕ Agregar Nuevo Juego"}</h2>
 
       <Input
         type="text"
@@ -48,13 +70,14 @@ const GameForm = ({ onSave }) => {
         required
       />
 
-      <Input
-        type="text"
-        placeholder="Género"
-        value={genre}
-        onChange={(e) => setGenre(e.target.value)}
-        required
-      />
+      <Select value={genre} onChange={(e) => setGenre(e.target.value)} required>
+        <option value="">Selecciona un género</option>
+        {genres.map((g) => (
+          <option key={g} value={g}>
+            {g}
+          </option>
+        ))}
+      </Select>
 
       <Input
         type="number"
@@ -74,18 +97,19 @@ const GameForm = ({ onSave }) => {
 
       {image && <PreviewImage src={image} alt="Vista previa" />}
 
-      <Button type="submit">✅ Guardar Juego</Button>
+      <Button type="submit">{gameToEdit ? "💾 Guardar Cambios" : "✅ Guardar Juego"}</Button>
     </FormContainer>
   );
 };
 
 GameForm.propTypes = {
   onSave: PropTypes.func.isRequired,
+  gameToEdit: PropTypes.object,
 };
 
 export default GameForm;
 
-// Estilos con Styled Components
+// 🎨 Estilos con Styled Components
 const FormContainer = styled.form`
   background: #ffffff;
   padding: 20px;
@@ -103,6 +127,16 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+`;
+
+const Select = styled.select`
+  width: 95%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
 `;
 
 const Button = styled.button`

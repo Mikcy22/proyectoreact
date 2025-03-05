@@ -26,18 +26,18 @@
   ],
   "games": [
     {
-      "title": "Titulo 2",
-      "genre": "Genero",
-      "releaseYear": "2025",
-      "image": "https://imgs.search.brave.com/izSjuRTm0gK5WYDLSJDZp6AdpBJ1r40WyQhhVGFYT2w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0aWJlcnJpLmNv/bS9yYWlscy9hY3Rp/dmVfc3RvcmFnZS9y/ZXByZXNlbnRhdGlv/bnMvcmVkaXJlY3Qv/ZXlKZmNtRnBiSE1p/T25zaWJXVnpjMkZu/WlNJNklrSkJhSEJC/Y0hkdUlpd2laWGh3/SWpwdWRXeHNMQ0p3/ZFhJaU9pSmliRzlp/WDJsa0luMTktLWNi/YjA3NTZmN2IwYzU4/Y2NkZTQzMmQ3MzA2/ZWUzOTRjMmM1ZGM3/NjIvZXlKZmNtRnBi/SE1pT25zaWJXVnpj/MkZuWlNJNklrSkJh/RGRDZW05TVdtMDVl/V0pYUmpCVFUwbEpZ/VzVDYmtKcWIwZFNW/bEUyUlc1S2JHTXli/RFphVmprd1lqRTVi/V0ZZVW1KQ01HdHBR/MFJyTUUxQldUZENi/RkpLU1dkbk0wMUVR/VWRQZDFwVklpd2la/WGh3SWpwdWRXeHNM/Q0p3ZFhJaU9pSjJZ/WEpwWVhScGIyNGlm/WDA9LS03NmJiMGMz/MTNmNmEwYWFkMWEz/MmY1NGRlNDg0OGRi/ZTZmMTMxMTZjL3Zp/ZGVvanVlZ29zLmpw/Zw",
-      "id": "7ee3"
-    },
-    {
-      "id": "a99e",
       "title": "Genshin impact",
       "genre": "Aventuras",
       "releaseYear": "2020",
-      "image": "https://media.vandal.net/t200/75962/genshin-impact-20209417573364_1.jpg"
+      "image": "https://media.vandal.net/t200/75962/genshin-impact-20209417573364_1.jpg",
+      "id": "a99e"
+    },
+    {
+      "title": "Ejemplo 1",
+      "genre": "Simulación",
+      "releaseYear": "2025",
+      "image": "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-ii-remastered-hero-01-en-12march24?$1600px$",
+      "id": "3888"
     }
   ]
 }
