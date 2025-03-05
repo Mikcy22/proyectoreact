@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import GameItem from "./GameItem";
-import GameForm from "./GameForm"; // Importa el formulario
+import GameForm from "./GameForm";
 import styled from "styled-components";
 import React from "react";
-
+import { useAuth } from "../../context/AuthContext"; // Importar el contexto de autenticación
 
 const GameList = () => {
   const [games, setGames] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const { logout } = useAuth(); // Obtener la función de logout
 
   useEffect(() => {
     fetchGames();
@@ -22,23 +23,27 @@ const GameList = () => {
 
   return (
     <Container>
-      <h1>Lista de Videojuegos</h1>
-      
-      {/* Botón para mostrar el formulario */}
+      <Header>
+        <h1>🎮 Lista de Videojuegos</h1>
+        <LogoutButton onClick={logout}>Cerrar Sesión</LogoutButton>
+      </Header>
+
       <Button onClick={() => setShowForm(!showForm)}>
-        {showForm ? "Cerrar Formulario" : "Agregar Juego"}
+        {showForm ? "❌ Cerrar Formulario" : "➕ Agregar Juego"}
       </Button>
 
-      {/* Mostrar formulario si showForm es true */}
-      {showForm && <GameForm onSave={() => {
-        fetchGames();  // Recargar lista de juegos después de agregar
-        setShowForm(false); // Ocultar formulario después de agregar
-      }} />}
+      {showForm && (
+        <GameForm onSave={() => {
+          fetchGames();
+          setShowForm(false);
+        }} />
+      )}
 
-      {/* Lista de juegos */}
-      {games.map((game) => (
-        <GameItem key={game.id} game={game} />
-      ))}
+      <GameGrid>
+        {games.map((game) => (
+          <GameItem key={game.id} game={game} onGameUpdated={fetchGames} />
+        ))}
+      </GameGrid>
     </Container>
   );
 };
@@ -48,18 +53,44 @@ export default GameList;
 // Estilos con Styled Components
 const Container = styled.div`
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Button = styled.button`
-  padding: 10px;
+  padding: 10px 15px;
   margin: 10px;
-  background-color: #007bff;
+  background-color: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #218838;
   }
+`;
+
+const LogoutButton = styled(Button)`
+  background-color: #dc3545;
+
+  &:hover {
+    background-color: #c82333;
+  }
+`;
+
+const GameGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 `;

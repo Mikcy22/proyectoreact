@@ -1,46 +1,50 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
-
 // Crear el contexto
 const AuthContext = createContext();
 
 // Proveedor del contexto
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null); // Manejo de errores
 
   // Función para iniciar sesión
   const login = async (credentials) => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
-      const user = response.data.find(
+      const foundUser = response.data.find(
         (u) => u.email === credentials.email && u.password === credentials.password
       );
-  
-      if (user) {
-        localStorage.setItem("token", user.id);
-        setUser(user); // 💡 ACTUALIZA EL CONTEXTO
+
+      if (foundUser) {
+        localStorage.setItem("token", foundUser.id);
+        setUser(foundUser);
+        setError(null); // Limpiar errores en caso de éxito
       } else {
-        console.log("Invalid credentials");
+        setError("Correo o contraseña incorrectos");
       }
     } catch (error) {
+      setError("Error al intentar iniciar sesión. Intenta de nuevo.");
       console.error("Login failed:", error);
     }
   };
-  
 
   // Función para registrarse
   const register = async (credentials) => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/users`, credentials);
-      localStorage.setItem("token", response.data.accessToken);
-      setUser(response.data.user);
-      return response;  // Devolver la respuesta para confirmar el registro
+      
+      if (response.status === 201) {
+        setUser(response.data); // Guarda el usuario registrado en el contexto
+        localStorage.setItem("token", response.data.id); // Guarda el ID como "token"
+        return response.data;
+      }
     } catch (error) {
+      setError("Error al registrarse. Intenta con otro correo.");
       console.error("Registration failed:", error.response ? error.response.data : error.message);
     }
   };
-  
 
   // Función para cerrar sesión
   const logout = () => {
@@ -50,11 +54,12 @@ export const AuthProvider = ({ children }) => {
 
   // Verificar si hay un token al cargar la aplicación
   useEffect(() => {
-    const token = localStorage.getItem("token"); // Aquí el token es el ID del usuario
+    const token = localStorage.getItem("token");
+
     if (token) {
-      axios.get(`http://localhost:3000/users/${token}`) // Usa la ruta correcta
+      axios.get(`${import.meta.env.VITE_API_URL}/users/${token}`)
         .then((response) => {
-          setUser(response.data); // Almacena el usuario en el estado global
+          setUser(response.data);
         })
         .catch((error) => {
           console.error("Error al obtener el usuario:", error);
@@ -63,8 +68,6 @@ export const AuthProvider = ({ children }) => {
         });
     }
   }, []);
-  
-  
 
   // Valor que se provee a los componentes hijos
   const value = {
@@ -72,6 +75,7 @@ export const AuthProvider = ({ children }) => {
     login,
     register,
     logout,
+    error, // Exponer errores al contexto
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

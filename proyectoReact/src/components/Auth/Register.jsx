@@ -41,15 +41,16 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await axios.post("http://localhost:3000/users", userData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/users`, userData);
       console.log("User registered successfully:", response.data);
-      navigate("/login"); // Redirige a la página de login después de registrarse
+      navigate("/login"); // Redirige al login tras registrarse
     } catch (error) {
       console.error("Registration failed:", error);
     }
   };
+  
 
   return (
     <Form onSubmit={handleRegister}>

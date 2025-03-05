@@ -71,14 +71,17 @@ const Login = () => {
   
       if (user) {
         localStorage.setItem("token", user.id); // Guarda el ID como "token"
+        login(user); // Ahora actualiza el contexto de autenticación
         navigate("/"); // Redirige correctamente
       } else {
-        console.log("Invalid credentials");
+        setError("Invalid credentials");
       }
     } catch (error) {
       console.error("Login failed:", error);
+      setError("Error during login. Please try again.");
     }
   };
+  
   
 
   return (
