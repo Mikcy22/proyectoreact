@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import styled from "styled-components";
+import React from "react";
 
 const GameForm = ({ game, onSave }) => {
   const [formData, setFormData] = useState({

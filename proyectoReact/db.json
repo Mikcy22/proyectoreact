@@ -10,7 +10,26 @@
       "name": "Miguel angel sedeño",
       "email": "sedeno2002@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "99e4",
+      "name": "micky",
+      "email": "sedeno2002@gmail.com",
+      "password": "321"
     }
   ],
-  "games": []
+  "games": [
+    {
+      "id": "97f7",
+      "title": "Titulo Juego",
+      "genre": "Genero Juego",
+      "releaseYear": "2025"
+    },
+    {
+      "id": "296f",
+      "title": "FarCry 5",
+      "genre": "Accion",
+      "releaseYear": "2018"
+    }
+  ]
 }

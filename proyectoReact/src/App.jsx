@@ -10,6 +10,11 @@ import React from "react";
 const App = () => {
   const { user } = useAuth();
 
+  // Esperar a que `user` se defina antes de mostrar rutas
+  if (user === undefined) {
+    return <p>Cargando...</p>;
+  }
+
   return (
     <>
       <GlobalStyles />
@@ -25,5 +30,6 @@ const App = () => {
     </>
   );
 };
+
 
 export default App;

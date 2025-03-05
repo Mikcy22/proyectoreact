@@ -12,13 +12,22 @@ export const AuthProvider = ({ children }) => {
   // Función para iniciar sesión
   const login = async (credentials) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/user`, credentials);
-      localStorage.setItem("token", response.data.accessToken);
-      setUser(response.data.user);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
+      const user = response.data.find(
+        (u) => u.email === credentials.email && u.password === credentials.password
+      );
+  
+      if (user) {
+        localStorage.setItem("token", user.id);
+        setUser(user); // 💡 ACTUALIZA EL CONTEXTO
+      } else {
+        console.log("Invalid credentials");
+      }
     } catch (error) {
       console.error("Login failed:", error);
     }
   };
+  
 
   // Función para registrarse
   const register = async (credentials) => {
@@ -41,13 +50,21 @@ export const AuthProvider = ({ children }) => {
 
   // Verificar si hay un token al cargar la aplicación
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token"); // Aquí el token es el ID del usuario
     if (token) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-      // Aquí podrías hacer una solicitud para obtener los datos del usuario
-      // y actualizar el estado `user`.
+      axios.get(`http://localhost:3000/users/${token}`) // Usa la ruta correcta
+        .then((response) => {
+          setUser(response.data); // Almacena el usuario en el estado global
+        })
+        .catch((error) => {
+          console.error("Error al obtener el usuario:", error);
+          localStorage.removeItem("token");
+          setUser(null);
+        });
     }
   }, []);
+  
+  
 
   // Valor que se provee a los componentes hijos
   const value = {
