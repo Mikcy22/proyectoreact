@@ -116,21 +116,22 @@ const Container = styled.div`
 
 const Header = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Alinea los elementos con espacio entre ellos */
   align-items: center;
-  margin-bottom: 15px;
+  width: 100%;
 `;
 
 const SearchInput = styled.input`
   width: 75%;
   padding: 10px;
-  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  margin-bottom: 10px;
 `;
 
 const LogoutButton = styled.button`
+  margin-top: -7px;
   background-color: #ff4d4d;
   color: white;
   border: none;
@@ -138,6 +139,7 @@ const LogoutButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  margin-left: 10px; 
 
   &:hover {
     background-color: #cc0000;

@@ -33,11 +33,165 @@
       "id": "a99e"
     },
     {
-      "title": "Ejemplo 3",
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "genre": "Aventura",
+      "releaseYear": "2017",
+      "image": "https://assets.nintendo.eu/image/upload/f_auto/q_auto/v1683606132/NAL/Articles/Relive%20the%20Story%20of%20The%20Legend%20of%20Zelda:%20Breath%20of%20the%20Wild/heroasset_ZeldaBotW_Story_Recap.jpg",
+      "id": "1a23b"
+    },
+    {
+      "title": "Minecraft",
+      "genre": "Sandbox",
+      "releaseYear": "2011",
+      "image": "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png?w=620&thumb=false",
+      "id": "bcd4e"
+    },
+    {
+      "title": "Grand Theft Auto V",
+      "genre": "Acción",
+      "releaseYear": "2013",
+      "image": "https://imgs.search.brave.com/q31mk2STLrtm0BCvQZqasMQYgNkTbZN9B4iSc1jpr6E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5hcGkucGxheXN0/YXRpb24uY29tL3Z1/bGNhbi9hcC9ybmQv/MjAyMjAzLzA5MTEv/VklCMFNlRWo5dlQ2/RFR2N1A0dGhKTFpp/LmpwZw",
+      "id": "f67b8"
+    },
+    {
+      "title": "Red Dead Redemption 2",
+      "genre": "Acción",
+      "releaseYear": "2018",
+      "image": "https://imgs.search.brave.com/qtAlCa2wnHddAbFEPCsUAKhziey_mZ5csTJS2MtGlNo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5hcGkucGxheXN0/YXRpb24uY29tL3Z1/bGNhbi9pbWcvcm5k/LzIwMjAxMS8xNzE4/L1RFblFFYVVaWXQz/RVBoUkp5TXhiYUxX/Si5qcGc",
+      "id": "g54d7"
+    },
+    {
+      "title": "Fortnite",
+      "genre": "Battle Royale",
+      "releaseYear": "2017",
+      "image": "https://imgs.search.brave.com/fUJmH49HKlR-ZaoJ5Cse7RhliiD8HD9qR2jLbTTPRfU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0LzU4LzA2LzUw/LzM2MF9GXzQ1ODA2/NTA1N19lZUMwMFVR/YlY0Q2tCbm5HWFdz/MExrem9udGJFdUho/Ny5qcGc",
+      "id": "h90f1"
+    },
+    {
+      "title": "The Witcher 3: Wild Hunt",
+      "genre": "RPG",
+      "releaseYear": "2015",
+      "image": "https://imgs.search.brave.com/Oo8zhq--O6LKKh18iBH7_goJqcfEhEuE2EdVLxT79ig/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5hcGkucGxheXN0/YXRpb24uY29tL3Z1/bGNhbi9hcC9ybmQv/MjAyMjExLzA5MTQv/VHZjSUhrWXFxbG4x/UkdiYUZxQmV1RnA2/LmpwZw",
+      "id": "i01j3"
+    },
+    {
+      "title": "Cyberpunk 2077",
+      "genre": "RPG",
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/v1P7F5Cef6Qlt2Am9RFas7iQkSB0bJfR2UWvwrwTrvI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZGxjb21wYXJlLmNv/bS9nYW1lX3RldGll/cmUvdXBsb2FkL2dh/bWVpbWFnZS9maWxl/LzM3NzAzLmpwZWcu/d2VicA",
+      "id": "j26k5"
+    },
+    {
+      "title": "Among Us",
+      "genre": "Multijugador",
+      "releaseYear": "2018",
+      "image": "https://imgs.search.brave.com/EexpBkJTHQMNRw9U0cw28-ryKKg_4DLPAPLTjS3LG8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8xMy8xMC9t/YWluLXBhZ2UtZ2Ft/ZS1hbW9uZy11cy1y/ZWFyLXZlY3Rvci0z/NTE3MTMxMC5qcGc",
+      "id": "k87l4"
+    },
+    {
+      "title": "Animal Crossing: New Horizons",
       "genre": "Simulación",
-      "releaseYear": "2025",
-      "image": "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-ii-remastered-hero-01-en-12march24?$1600px$",
-      "id": "3888"
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/XlpIW0EaDSl2BT8vZFqMaBxIQuAkPHn0Et7Vf6f5CeA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bXVuZG9kZXBvcnRp/dm8uY29tL2FsZmFi/ZXRhL2hlcm8vMjAy/MC8wMy9hbmltYWwt/Y3Jvc3NpbmctbmV3/LWhvcml6b25zLmpw/Zz93aWR0aD03Njgm/YXNwZWN0X3JhdGlv/PTE2OjkmZm9ybWF0/PW5vd2VicA",
+      "id": "l56m7"
+    },
+    {
+      "title": "Call of Duty: Warzone",
+      "genre": "Shooter",
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/lEPZFL9MZcb3Yn7BvpS3W-lq81Qq4H3dr7dp7zRKGRY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvY2FsbC1vZi1k/dXR5LXdhcnpvbmUt/NGsta3pldHo3aDd0/NzUwNzN5ZS5qcGc",
+      "id": "m90n2"
+    },
+    {
+      "title": "The Elder Scrolls V: Skyrim",
+      "genre": "RPG",
+      "releaseYear": "2011",
+      "image": "https://imgs.search.brave.com/ZIXZZo-5TaV_XjKy_iL_P6jkJKD0PjgolHBE2BJIS0o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvc2t5cmltLXBp/Y3R1cmVzLTA1ZWFh/b2puOXl2ZndnYmgu/anBn",
+      "id": "n12o9"
+    },
+    {
+      "title": "Assassin's Creed Valhalla",
+      "genre": "Acción",
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/X9X55F0altVWTP4FjhAIk-RcjfwsBreb87-yvjlOdJg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZGxjb21wYXJlLmNv/bS9nYW1lX3RldGll/cmUvdXBsb2FkL2dh/bWVpbWFnZS9maWxl/LzJkMjktYXNzYXNz/aW5fc19jcmVlZF92/YWxoYWxsYS5qcGVn/LndlYnA",
+      "id": "o34p8"
+    },
+    {
+      "title": "The Last of Us Part II",
+      "genre": "Aventura",
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/Kjl1TH-ZbelwHzNH8ofWjGA2GoGeTnz4KHy7x8SCUww/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDkzNDkx/MTQuanBn",
+      "id": "p56q7"
+    },
+    {
+      "title": "Overwatch",
+      "genre": "Shooter",
+      "releaseYear": "2016",
+      "image": "https://imgs.search.brave.com/eAePhtcOZZXURMPg_dCUZfJyRZk6MQftQIpMHDEigiU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvb3ZlcndhdGNo/LXBpY3R1cmVzLWRw/YWNtZzVxazNhYmk3/cW4uanBn",
+      "id": "q01r4"
+    },
+    {
+      "title": "Fall Guys: Ultimate Knockout",
+      "genre": "Battle Royale",
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/FXpWttDEOYdYMdSjo8CFdzc1rN_UpO91krfoUcRJT5U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/LmVzLnBsYXlzdGF0/aW9uLmNvbS90YWNo/eW9uL3NpdGVzLzE0/LzIwMzIvMDUvMGRm/MmVkMzhmOGViNTJk/MTQyYjg3NDA0NGE4/MTdlNTgzYjcwNjU4/My5qcGc_cmVzaXpl/PTEwODgsNjEyJmNy/b3Bfc3RyYXRlZ3k9/c21hcnQ",
+      "id": "r34s9"
+    },
+    {
+      "title": "Halo Infinite",
+      "genre": "Shooter",
+      "releaseYear": "2021",
+      "image": "https://imgs.search.brave.com/Ck9Smh7TEvTLA2EJbARhGVq890c4V1Xd1TBTPJfrpmE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmJs/b2dzLmVzLzFkMWI2/Ni9zY3JlZW5zaG90/XzQ3NzMvMTM2Nl8y/MDAwLmpwZWc",
+      "id": "s10t3"
+    },
+    {
+      "title": "Mario Kart 8 Deluxe",
+      "genre": "Carreras",
+      "releaseYear": "2017",
+      "image": "https://imgs.search.brave.com/AzLi90SnGgqCqHn7Nl2oCM1RlwfGtDFvkZZPX8pF8Zw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bmludGVuZGVyb3Mu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzEwL0gyeDFf/TlN3aXRjaF9NYXJp/b0thcnQ4RGVsdXhl/X2ltYWdlMTYwMHct/ODAweDQ1MC5qcGc",
+      "id": "t98u7"
+    },
+    {
+      "title": "Spiderman: Miles Morales",
+      "genre": "Acción",
+      "releaseYear": "2020",
+      "image": "https://media.vandal.net/i/1280x720/11-2022/2022112390288_1.jpg.webp",
+      "id": "u41v6"
+    },
+    {
+      "title": "God of War",
+      "genre": "Acción",
+      "releaseYear": "2005",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/God_of_War_Logo.png",
+      "id": "v92w3"
+    },
+    {
+      "title": "Hades",
+      "genre": "Roguelike",
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/HZ-b71eQtO1J6OSQVOZUZ9svuUFKznRYUmlVB2MYa2Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waXZp/Z2FtZXMuYmxvZy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/Ni9IYWRlcy1QaXZp/R2FtZXMuanBn",
+      "id": "w43x7"
+    },
+    {
+      "title": "Tetris",
+      "genre": "Puzzle",
+      "releaseYear": "1984",
+      "image": "https://imgs.search.brave.com/Q8xJLJzT3UyKgw3RCaT8T5EDKxE9YNuzduF97lIwYHo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5hcGkucGxheXN0/YXRpb24uY29tL3Z1/bGNhbi9hcC9ybmQv/MjAyMzAxLzIwMDYv/SmpxajRvSWNXdnlW/NGpHcERRa1RzU2Fn/LnBuZw",
+      "id": "x65y8"
+    },
+    {
+      "title": "World of Warcraft",
+      "genre": "MMORPG",
+      "releaseYear": "2004",
+      "image": "https://imgs.search.brave.com/DmTyeIY5ruEEEjZdvCa9bjh-ztPHygIlgQg1nk_IAHU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllUYzBPV1kx/TWpNdE9UTTVOeTAw/TURabExUbGlZbUl0/TUdSbFkyWXhNVEU1/Wldaa1hrRXlYa0Zx/Y0djQC5qcGc",
+      "id": "y07z9"
+    },
+    {
+      "title": "FIFA 25",
+      "genre": "Deportes",
+      "releaseYear": "2020",
+      "image": "https://imgs.search.brave.com/sd8f_zMF26zeHLqfnF6X-Zz3Qnml4ShC6EpuJCGBkag/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5hcGkucGxheXN0/YXRpb24uY29tL3Z1/bGNhbi9hcC9ybmQv/MjAyNTAyLzE5MDAv/MDMyY2QwZTg0YWFh/NjI0MDRlOTA0OTk4/N2I2ZjI0N2FlZTc4/MWUzZjU2ZTg5NmYy/LmpwZw",
+      "id": "z56a7"
     }
   ]
 }
