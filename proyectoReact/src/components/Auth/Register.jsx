@@ -43,7 +43,7 @@ const Register = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/users`, userData);
+      const response = await axios.post(`http://localhost:3000/users`, userData);
       console.log("User registered successfully:", response.data);
       navigate("/login"); // Redirige al login tras registrarse
     } catch (error) {

@@ -32,7 +32,7 @@ const GameForm = ({ onSave, gameToEdit }) => {
     try {
       if (gameToEdit) {
         // Actualizar un juego existente
-        await axios.put(`${import.meta.env.VITE_API_URL}/games/${gameToEdit.id}`, {
+        await axios.put(`http://localhost:3000/games/${gameToEdit.id}`, {
           title,
           genre,
           releaseYear,
@@ -40,7 +40,7 @@ const GameForm = ({ onSave, gameToEdit }) => {
         });
       } else {
         // Agregar un nuevo juego
-        await axios.post(`${import.meta.env.VITE_API_URL}/games`, {
+        await axios.post(`http://localhost:3000/games`, {
           title,
           genre,
           releaseYear,

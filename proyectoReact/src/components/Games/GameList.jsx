@@ -19,7 +19,7 @@ const GameList = () => {
 
   const fetchGames = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/games`);
+      const response = await axios.get(`http://localhost:3000/games`);
       setGames(response.data);
     } catch (error) {
       console.error("Error cargando juegos:", error);
@@ -33,7 +33,7 @@ const GameList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/games/${id}`);
+      await axios.delete(`http://localhost:3000/games/${id}`);
       fetchGames();
     } catch (error) {
       console.error("Error eliminando juego:", error);

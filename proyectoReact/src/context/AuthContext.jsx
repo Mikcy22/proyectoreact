@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   // Función para iniciar sesión
   const login = async (credentials) => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
+      const response = await axios.get(`http://localhost:3000/users`);
       const user = response.data.find(
         (u) => u.email === credentials.email && u.password === credentials.password
       );

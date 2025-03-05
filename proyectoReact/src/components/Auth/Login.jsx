@@ -64,7 +64,7 @@ const Login = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
+      const response = await axios.get(`http://localhost:3000/users`);
       const user = response.data.find(
         (u) => u.email === credentials.email && u.password === credentials.password
       );
